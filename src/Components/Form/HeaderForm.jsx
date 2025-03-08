@@ -1,14 +1,12 @@
-import { useState } from 'react'
+import { updateField } from '@/features/form/formSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const HeaderForm = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    title: "",
-  });
+  const dispatch = useDispatch();
+  const formData = useSelector((state) => state.form.formData);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
+    dispatch(updateField({ field: e.target.name, value: e.target.value }));
   };
 
   return (
@@ -17,8 +15,8 @@ const HeaderForm = () => {
         <label className='w-32'>Full Name:</label>
         <input
           type="text"
-          name="fullName"
-          value={formData.fullName}
+          name="name"
+          value={formData.name}
           onChange={handleChange}
           className='border-2 rounded-sm'
         />
