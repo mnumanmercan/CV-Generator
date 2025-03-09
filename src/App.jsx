@@ -4,8 +4,9 @@ import Wrapper from './Components/Output/Wrapper'
 function App() {
   return (
     <>
-      <div className='flex'>
+      <div className='flex gap-7'>
         <FormWrapper />
+        <div className='middle-line border-zinc-800'> </div>
         <Wrapper />
       </div>
     </>

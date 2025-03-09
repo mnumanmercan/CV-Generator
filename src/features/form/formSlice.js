@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   headerInfo: {
     name: "Name",
-    email: "email",
     title: "Title",
+    email: "email",
     phone: "555 555 55 55",
-    linkedin: "linkedin",
+    portfolio: "portfolio",
     github: "github",
-    portfolio: "portfolio"
+    linkedin: "linkedin",
   },
 };
 

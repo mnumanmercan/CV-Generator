@@ -10,16 +10,16 @@ const HeaderForm = () => {
   };
 
   return (
-    <div className='form-header border-2 px-8 py-4 flex flex-col gap-3'>
+    <div className='form-header px-8 py-4 flex flex-col gap-3 flex-wrap -mx-3 mb-6'>
       { headerInfo && Object.entries(headerInfo).map(([key, value]) => (
-        <div key={key}> 
-          <label className='w-32'>{ key }</label>
+        <div key={key} className="w-full px-3 mb-6 md:mb-0"> 
+          <label className='block uppercase tracking-wide text-gray-700 text-md font-bold mb-2'>{ key }</label>
           <input
             type="text"
             name={key}
             value={value}
             onChange={handleChange}
-            className='border-2 rounded-sm'
+            className='appearance-none block w-full bg-gray-200 text-gray-700 border shadow-md rounded py-3 px-4 mb-3 leading-tight focus:outline-none'
           />
         </div>
     ))}
