@@ -10,6 +10,10 @@ const initialState = {
     github: "github",
     linkedin: "linkedin",
   },
+  summaryInfo: {
+    title: "Summary",
+    content: "Type here your story..."
+  }
 };
 
 const formSlice = createSlice({
@@ -18,10 +22,16 @@ const formSlice = createSlice({
   reducers: {
     updateField: (state, action) => {
       const { field, value } = action.payload;
+
       state.headerInfo[field] = value;
+    },
+    updateSummary: (state, action) => {
+      const {field, value} = action.payload;
+      
+      state.summaryInfo[field] = value;
     },
   },
 });
 
-export const { updateField } = formSlice.actions;
+export const { updateField, updateSummary } = formSlice.actions;
 export default formSlice.reducer;
